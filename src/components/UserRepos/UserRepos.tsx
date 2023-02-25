@@ -20,7 +20,7 @@ const UserRepos = () => {
       sx={{
         width: "100%",
         bgcolor: "background.paper",
-        height: "700px",
+        height: "400px",
         overflow: "auto",
       }}
     >
@@ -34,7 +34,8 @@ const UserRepos = () => {
           align="center"
           color="#3f51b5"
         >
-          No one found or user have private repositories
+          No one found
+          <Typography>probably the user has private repositories</Typography>
         </Typography>
       )}
     </List>

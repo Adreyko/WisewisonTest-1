@@ -6,6 +6,7 @@ import { setRepos } from "../../../redux/slices/RepoSlice/RepoSlice";
 import { fetchRepo } from "../../../redux/slices/RepoSlice/thunk/fetchRepo";
 import debounce from "lodash.debounce";
 
+
 const Search = () => {
   const dispatch = useAppDispatch();
   const [searchInput, setSearchInput] = useState<string>("");
@@ -39,7 +40,9 @@ const Search = () => {
       label="Search..."
       variant="standard"
       value={value}
+      color="primary"
       onChange={handleInputChange}
+      
     />
   );
 };

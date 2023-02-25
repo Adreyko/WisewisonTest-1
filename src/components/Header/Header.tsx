@@ -12,6 +12,7 @@ function Header() {
         component="h4"
         align="center"
         color="#3f51b5"
+        padding='10px'
       >
         Search repository by username
       </Typography>
