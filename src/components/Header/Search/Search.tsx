@@ -6,13 +6,12 @@ import { setRepos } from "../../../redux/slices/RepoSlice/RepoSlice";
 import { fetchRepo } from "../../../redux/slices/RepoSlice/thunk/fetchRepo";
 import debounce from "lodash.debounce";
 
-
-const Search = () => {
+const Search: React.FC = () => {
   const dispatch = useAppDispatch();
   const [searchInput, setSearchInput] = useState<string>("");
   const [value, setValue] = useState<string>("");
 
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange: (e: ChangeEvent<HTMLInputElement>) => void = (e) => {
     setValue(e.target.value);
     updateSearchValue(e.target.value);
   };
@@ -22,7 +21,7 @@ const Search = () => {
     debounce((str) => {
       setSearchInput(str);
     }, 1000),
-    [],
+    []
   );
 
   useEffect(() => {
@@ -42,7 +41,6 @@ const Search = () => {
       value={value}
       color="primary"
       onChange={handleInputChange}
-      
     />
   );
 };

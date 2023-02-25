@@ -1,19 +1,23 @@
 import { List, Typography } from "@mui/material";
-import { memo } from "react";
+import React, { memo, useMemo } from "react";
 import { useAppSelector } from "../../redux/redux-hooks/hooks";
 import ReposList from "./ReposList/ReposList";
 
-const UserRepos = () => {
+const UserRepos: React.FC = () => {
   const userRepos = useAppSelector((repos) => repos.repos.repos);
 
-  const reposEl = userRepos.map((repos) => (
-    <ReposList
-      key={repos.id}
-      name={repos.name}
-      html_url={repos.html_url}
-      id={repos.id}
-    />
-  ));
+  const reposEl: React.ReactElement[] = useMemo(
+    () =>
+      userRepos.map((repos) => (
+        <ReposList
+          key={repos.id}
+          name={repos.name}
+          html_url={repos.html_url}
+          id={repos.id}
+        />
+      )),
+    [userRepos]
+  );
 
   return (
     <List

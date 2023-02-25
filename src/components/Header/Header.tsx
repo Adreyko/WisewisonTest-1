@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 import { memo } from "react";
 import Search from "./Search/Search";
 
-function Header() {
+const Header: React.FC = () => {
   return (
     <Box sx={{ display: "flex" }}>
       <Typography
@@ -12,13 +12,13 @@ function Header() {
         component="h4"
         align="center"
         color="#3f51b5"
-        padding='10px'
+        padding="10px"
       >
         Search repository by username
       </Typography>
       <Search />
     </Box>
   );
-}
+};
 
 export default memo(Header);

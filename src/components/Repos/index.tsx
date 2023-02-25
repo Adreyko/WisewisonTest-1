@@ -5,7 +5,7 @@ import { Box, Container } from "@mui/system";
 import { Divider } from "@mui/material";
 import { memo } from "react";
 
-const Repos = () => {
+const Repos: React.FC = () => {
   return (
     <Container maxWidth="md">
       <Box

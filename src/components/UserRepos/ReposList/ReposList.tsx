@@ -2,7 +2,7 @@ import { Link, ListItem, Typography } from "@mui/material";
 import { memo } from "react";
 import { IRepo } from "../../../intarfaces/intarfaces";
 
-const ReposList = ({ name, html_url, id }: IRepo) => {
+const ReposList: React.FC<IRepo> = ({ name, html_url, id }: IRepo) => {
   return (
     <ListItem sx={{ border: 1 }} key={id}>
       <Link href={html_url} underline="hover">
